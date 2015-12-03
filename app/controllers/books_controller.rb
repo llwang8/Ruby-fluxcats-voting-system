@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_book, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!
 
   # GET /books
@@ -60,6 +60,16 @@ class BooksController < ApplicationController
       format.html { redirect_to books_url, notice: 'Book was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @book.upvote_from current_user
+    redirect_to books_path
+  end
+
+  def downvote
+    @book.downvote_from current_user
+    redirect_to books_path
   end
 
   private

@@ -14,7 +14,7 @@
       <%= link_to "Book Store", books_path %>
     </div>
     <ul class='nav navbar-nav navbar-right'>
-      <% if use_signed_in? %>
+      <% if user_signed_in? %>
       <li>
         <%= link_to current_user.email, eidt_user_registration_path %>
       </li>
