@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails votingSystem: development" uuid="89deb647-e730-4462-9322-b76d48988e6b">
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails votingSystem: test" uuid="f04eeb18-db77-4d14-9790-66b6b37e835f">
+      <schema-pattern>votingSystem_test.*</schema-pattern>
+      <default-schemas>votingSystem_test.*</default-schemas>
+    </data-source>
+    <data-source name="Rails votingSystem: production" uuid="4b489e4f-458a-40fa-8701-8646608cd5d4">
+      <first-sync>true</first-sync>
+      <user-name>votingSystem</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddffcdfe5dffedfe3dfe4dfeddff9dff3dff9dffedfefdfe7dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

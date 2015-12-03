@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Books</h1>
 
 <table>
   <thead>
@@ -12,40 +11,49 @@
   </thead>
 
   <tbody>
+
+
   <p id="notice"><%= notice %></p>
   <h1>Listing Books</h1>
+
     <% @books.each do |book| %>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
       <tr>
         <td>
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <%= image_tag book.image.url(:medium) %>
-              <div class="caption">
-                <h3><%= book.title, book %></h3>
-                <%= link_to like_book_path(book), class: 'like', method: :put do %>
+
+
+               <%= image_tag book.image.url(:medium) %>
+               <div class="caption">
+                 <h3><%= link_to book.title, book %></h3>
+                <%= link_to book_like_path(book), class: 'like', method: :put do %>
                     <button type="button" class="btn btn-info" aria-label="Left Align">
                     <span class='glyphicon glyphicon-thumbs-up'aria-hidden='true'></span>
                       <span class='badge'><%= book.get_upvotes.size %></span>
                     </button>
                 <% end %>
-                <%= link_to unlike_book_path(book), class: 'like', method: :put do %>
+                <%= link_to book_dislike_path(book), class: 'like', method: :put do %>
                     <button type="button" class="btn btn-info" aria-label="Left Align">
                     <span class='glyphicon glyphicon-thumbs-down'aria-hidden='true'></span>
                       <span class='badge'><%= book.get_downvotes.size %></span>
                     </button>
                  <% end %>
-              </div>
-            </div>
+
+
           </div>
-        <% end %>
+
         </td>
         <td><%= book.description %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
+      </div>
 
 
+
+      <% end %>
 
   </tbody>
 </table>

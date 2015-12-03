@@ -64,10 +64,13 @@ class BooksController < ApplicationController
 
   def upvote
     @book.upvote_from current_user
+    #@book = Book.find(params[:id])
+    #@book.liked_by current_user
     redirect_to books_path
   end
 
   def downvote
+    #@book = Book.find(params[:id])
     @book.downvote_from current_user
     redirect_to books_path
   end

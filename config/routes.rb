@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   get 'home/index'
 
-  resources :books
+  resources :books do
+    #current_user do
+      put 'like', to: 'books#upvote'
+      put 'dislike', to: 'books#downvote'
+    #end
+  end
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,6 +15,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   #root 'home#index'
   root 'books#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
